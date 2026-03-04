@@ -44,6 +44,18 @@
 };
 
 / {
+    chosen {
+        zmk,studio-rpc-uart = &studio_rpc_uart;
+    };
+};
+
+&zephyr_udc0 {
+    studio_rpc_uart: studio_rpc_uart {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
+
+/ {
     trackball_listener: trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;

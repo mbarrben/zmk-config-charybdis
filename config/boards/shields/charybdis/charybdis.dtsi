@@ -1,9 +1,9 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <physical_layouts.dtsi>
 
 / {
     chosen {
         zmk,kscan = &kscan0;
-        zmk,matrix_transform = &default_transform;
     };
 
     default_transform: keymap_transform_0 {
@@ -42,6 +42,63 @@
 			, <&pro_micro 5 GPIO_ACTIVE_HIGH>
 			, <&pro_micro 4 GPIO_ACTIVE_HIGH>
 			, <&pro_micro 9 GPIO_ACTIVE_HIGH>
+            ;
+    };
+
+    default_layout: default_layout {
+        compatible = "zmk,physical-layout";
+        display-name = "Default";
+        transform = <&default_transform>;
+        kscan = <&kscan0>;
+        keys  //                     w     h     x      y    rot    rx     ry
+            /* Row 0 – left */
+            = <&key_physical_attrs 1900 1900     0  1092    0      0      0>
+            , <&key_physical_attrs 1900 1900  1900  1092    0      0      0>
+            , <&key_physical_attrs 1900 1900  3800   238    0      0      0>
+            , <&key_physical_attrs 1900 1900  5700     0    0      0      0>
+            , <&key_physical_attrs 1900 1900  7600   238    0      0      0>
+            , <&key_physical_attrs 1900 1900  9500   238    0      0      0>
+            /* Row 0 – right (cols 11,10,9,8,7,6) */
+            , <&key_physical_attrs 1900 1900 17100   238    0      0      0>
+            , <&key_physical_attrs 1900 1900 19000   238    0      0      0>
+            , <&key_physical_attrs 1900 1900 20900     0    0      0      0>
+            , <&key_physical_attrs 1900 1900 22800   238    0      0      0>
+            , <&key_physical_attrs 1900 1900 24700  1092    0      0      0>
+            , <&key_physical_attrs 1900 1900 26600  1092    0      0      0>
+            /* Row 1 – left */
+            , <&key_physical_attrs 1900 1900     0  2992    0      0      0>
+            , <&key_physical_attrs 1900 1900  1900  2992    0      0      0>
+            , <&key_physical_attrs 1900 1900  3800  2137    0      0      0>
+            , <&key_physical_attrs 1900 1900  5700  1900    0      0      0>
+            , <&key_physical_attrs 1900 1900  7600  2137    0      0      0>
+            , <&key_physical_attrs 1900 1900  9500  2137    0      0      0>
+            /* Row 1 – right */
+            , <&key_physical_attrs 1900 1900 17100  2137    0      0      0>
+            , <&key_physical_attrs 1900 1900 19000  2137    0      0      0>
+            , <&key_physical_attrs 1900 1900 20900  1900    0      0      0>
+            , <&key_physical_attrs 1900 1900 22800  2137    0      0      0>
+            , <&key_physical_attrs 1900 1900 24700  2992    0      0      0>
+            , <&key_physical_attrs 1900 1900 26600  2992    0      0      0>
+            /* Row 2 – left */
+            , <&key_physical_attrs 1900 1900     0  4893    0      0      0>
+            , <&key_physical_attrs 1900 1900  1900  4893    0      0      0>
+            , <&key_physical_attrs 1900 1900  3800  4037    0      0      0>
+            , <&key_physical_attrs 1900 1900  5700  3800    0      0      0>
+            , <&key_physical_attrs 1900 1900  7600  4037    0      0      0>
+            , <&key_physical_attrs 1900 1900  9500  4037    0      0      0>
+            /* Row 2 – right */
+            , <&key_physical_attrs 1900 1900 17100  4037    0      0      0>
+            , <&key_physical_attrs 1900 1900 19000  4037    0      0      0>
+            , <&key_physical_attrs 1900 1900 20900  3800    0      0      0>
+            , <&key_physical_attrs 1900 1900 22800  4037    0      0      0>
+            , <&key_physical_attrs 1900 1900 24700  4893    0      0      0>
+            , <&key_physical_attrs 1900 1900 26600  4893    0      0      0>
+            /* Row 3 – thumbs: RC(3,3) RC(3,4) RC(3,1) RC(3,7) RC(3,9) */
+            , <&key_physical_attrs 1900 1900  6612  5938    0      0      0>
+            , <&key_physical_attrs 1900 1900  6612  5938  150   7562  15000>
+            , <&key_physical_attrs 1900 1900  6612  5938  300   7562  15000>
+            , <&key_physical_attrs 1900 1900 19988  5938 (-300) 20938  15000>
+            , <&key_physical_attrs 1900 1900 19988  5938 (-150) 20938  15000>
             ;
     };
 };
