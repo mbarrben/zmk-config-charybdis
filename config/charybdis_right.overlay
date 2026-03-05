@@ -63,7 +63,7 @@
 
         scroll {
             layers = <6>;  /* SCROLL layer */
-            input-processors = <&zip_xy_to_scroll_mapper>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler (-1) 16>;
         };
     };
 };
